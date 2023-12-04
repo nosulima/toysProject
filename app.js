@@ -2,8 +2,10 @@
 const express=require('express');
 const app=express();
 const cors=require('cors');
+const path=require('path');
 app.use(express.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname,'public')));
 const userRouter=require('./routes/user.routes');
 const toysRouter=require('./routes/toy.routes');
 const { routesInit } = require('./routes/routers.routes');
